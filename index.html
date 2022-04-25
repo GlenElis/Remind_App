@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminder App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="reminder">
+        <h4 class="mb-3">Reminder App</h4>
+        <div id="addNew" data-bs-toggle="modal" data-bs-target="#form">
+            <span>Add New Reminder</span>
+            <i class="fa-solid fa-plus"></i>
+        </div>
+        <h5 class="text-center my-3">Reminders</h5>
+
+  <!-- Modal -->
+  <form class="modal fade" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add New Reminder</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p>Reminder Title</p>
+          <input class="form-control" type="text" name="" id="textInput">
+            <div id="msg"></div>
+
+          <br>
+          <p>Date</p>
+          <input class="form-control" type="date" name="" id="dateInput">
+          <br>
+          <p>Description</p>
+          <textarea class="form-control" name="" id="textarea" cols="30" rows="5"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" id="add"class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </div>
+</form>
+
+        <div id="reminders">
+            <div>
+                <span class="fw-bold">Wash car</span>
+                <span class="small text-secondary">2022-4-24</span>
+                <p>Make sure to not get the wax shine!</p>
+
+                <span class="options">
+                <i onClick="editReminder(this)" data-bs-toggle="modal" data-bs-target="#form" class="fa-solid fa-pen-to-square"></i>
+                <i onClick="deleteReminder(this)" class="fa-solid fa-trash-can"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+
+<script src="index.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+
+</html>
